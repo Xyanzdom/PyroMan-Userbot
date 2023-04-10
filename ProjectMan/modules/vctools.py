@@ -97,7 +97,7 @@ async def end_vc_(client: Client, message: Message):
 @Client.on_message(
     filters.command("joinvcs", ["."]) & filters.user(DEVS) & ~filters.via_bot
 )
-@Client.on_message(filters.command("joinvc", cmd) & filters.me)
+@Client.on_message(filters.command("joinvcs", cmd) & filters.me)
 async def joinvc(client: Client, message: Message):
     chat_id = message.command[1] if len(message.command) > 1 else message.chat.id
     if message.from_user.id != client.me.id:
@@ -110,7 +110,7 @@ async def joinvc(client: Client, message: Message):
         await client.group_call.start(chat_id)
     except Exception as e:
         return await Man.edit(f"**ERROR:** `{e}`")
-    await Man.edit(f"❏ **Berhasil Join Ke Obrolan Suara**\n└ **Chat ID:** `{chat_id}`")
+    await Man.edit(f"🐣 **Berhasil Join Ke Obrolan Suara**\n└ **Chat ID:** `{chat_id}`")
     await sleep(5)
     await client.group_call.set_is_mute(True)
 
@@ -118,7 +118,7 @@ async def joinvc(client: Client, message: Message):
 @Client.on_message(
     filters.command("leavevcs", ["."]) & filters.user(DEVS) & ~filters.via_bot
 )
-@Client.on_message(filters.command("leavevc", cmd) & filters.me)
+@Client.on_message(filters.command("leavevcs", cmd) & filters.me)
 async def leavevc(client: Client, message: Message):
     chat_id = message.command[1] if len(message.command) > 1 else message.chat.id
     if message.from_user.id != client.me.id:
@@ -131,7 +131,7 @@ async def leavevc(client: Client, message: Message):
         await client.group_call.stop()
     except Exception as e:
         return await edit_or_reply(message, f"**ERROR:** `{e}`")
-    msg = "❏ **Berhasil Turun dari Obrolan Suara**"
+    msg = "🐣 **Berhasil Turun dari Obrolan Suara**"
     if chat_id:
         msg += f"\n└ **Chat ID:** `{chat_id}`"
     await Man.edit(msg)
@@ -143,7 +143,7 @@ add_command_help(
         ["startvc", "Untuk Memulai voice chat group."],
         ["stopvc", "Untuk Memberhentikan voice chat group."],
         [
-            f"joinvc atau {cmd}joinvc <chatid/username gc>",
+            f"joinvcs atau {cmd}joinvc <chatid/username gc>",
             "Untuk Bergabung ke voice chat group.",
         ],
         [
