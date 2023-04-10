@@ -35,9 +35,15 @@ async def module_help(client: Client, message: Message):
         await edit_or_reply(
             message, f"```{str(ac)}```\n• kontol-userbot•"
         
-        
-   
-   
+        )
+
+         await message.reply(
+
+            f"**Contoh Ketik** `{CMD_HANDLER}help afk` **Untuk Melihat Informasi Module**"
+
+       )
+
+
 
     if help_arg:
         if help_arg in CMD_HELP:
