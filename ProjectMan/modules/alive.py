@@ -36,7 +36,7 @@ alive_logo = (
     gvarstatus("ALIVE_LOGO") or
 )
 emoji = gvarstatus("ALIVE_EMOJI") or "🐣"
-alive_text = gvarstatus("ALIVE_TEKS_CUSTOM") or "Hey, I am alive."
+alive_text = gvarstatus("ALIVE_TEKS_CUSTOM") or "Hey,kontol-userbot is active."
 
 
 @Client.on_message(filters.command(["alive", "awake"], cmd) & filters.me)
