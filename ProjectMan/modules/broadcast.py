@@ -42,7 +42,7 @@ del _GCAST_BLACKLIST
 @Client.on_message(filters.command("gcast", cmd) & filters.me)
 async def gcast_cmd(client: Client, message: Message):
     if message.reply_to_message or get_arg(message):
-        Man = await edit_or_reply(message, "`Started global broadcast...`")
+        Man = await edit_or_reply(message, "`prossecing...`")
     else:
         return await message.edit_text("**Berikan Sebuah Pesan atau Reply**")
     done = 0
@@ -66,7 +66,7 @@ async def gcast_cmd(client: Client, message: Message):
                     error += 1
                     await asyncio.sleep(0.3)
     await Man.edit_text(
-        f"**Berhasil Mengirim Pesan Ke** `{done}` **Grup, Gagal Mengirim Pesan Ke** `{error}` **Grup**"
+        f"**Berhasil Mengirim Pesan Ke** `{done}` **Grup, soory tod Gagal Mengirim Pesan Ke** `{error}` **Grup**"
     )
 
 
@@ -97,7 +97,7 @@ async def gucast_cmd(client: Client, message: Message):
                     error += 1
                     await asyncio.sleep(0.3)
     await Man.edit_text(
-        f"**Berhasil Mengirim Pesan Ke** `{done}` **chat, Gagal Mengirim Pesan Ke** `{error}` **chat**"
+        f"**Berhasil Mengirim Pesan Ke** `{done}` **chat,sorry tod Gagal Mengirim Pesan Ke** `{error}` **chat**"
     )
 
 
