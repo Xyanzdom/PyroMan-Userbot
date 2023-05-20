@@ -72,10 +72,10 @@ async def pingme(client: Client, message: Message):
 
 
     await xx.edit(
-        f"❏ **PONG✈️**\n"
+        f"❏ **PONG**\n"
         f"├• **Pinger** - `%sms`\n"
-
-       
+        f"├• **uptime _** `{uptime}` \n"
+      ) 
 
 
 @Client.on_message(filters.command("kping", cmd) & filters.me)
