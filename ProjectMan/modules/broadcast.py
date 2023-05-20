@@ -39,12 +39,12 @@ while 0 < 6:
 del _GCAST_BLACKLIST
 
 
-@Client.on_message(filters.command("gcast", cmd) & filters.me)
+@Client.on_message(filters.command("gikes", cmd) & filters.me)
 async def gcast_cmd(client: Client, message: Message):
     if message.reply_to_message or get_arg(message):
         Man = await edit_or_reply(message, "`prossecing...`")
     else:
-        return await message.edit_text("**Berikan Sebuah Pesan atau Reply**")
+        return await message.edit_text("**Berikan saya Sebuah Pesan atau Reply goblok**")
     done = 0
     error = 0
     async for dialog in client.get_dialogs():
@@ -66,16 +66,16 @@ async def gcast_cmd(client: Client, message: Message):
                     error += 1
                     await asyncio.sleep(0.3)
     await Man.edit_text(
-        f"**Berhasil Mengirim Pesan Ke** `{done}` **Grup, soory tod Gagal Mengirim Pesan Ke** `{error}` **Grup**"
+        f"**☑️Berhasil Mengirim Ke** `{done}` **Grup, ❌Gagal Mengirim Pesan Ke** `{error}` **Grup**"
     )
 
 
 @Client.on_message(filters.command("gucast", cmd) & filters.me)
 async def gucast_cmd(client: Client, message: Message):
     if message.reply_to_message or get_arg(message):
-        Man = await edit_or_reply(message, "`Started global broadcast...`")
+        Man = await edit_or_reply(message, "`Started broadcast...`")
     else:
-        return await message.edit_text("**Berikan Sebuah Pesan atau Reply**")
+        return await message.edit_text("**Berikan saya Sebuah Pesan atau Reply goblok..**")
     done = 0
     error = 0
     async for dialog in client.get_dialogs():
@@ -97,7 +97,7 @@ async def gucast_cmd(client: Client, message: Message):
                     error += 1
                     await asyncio.sleep(0.3)
     await Man.edit_text(
-        f"**Berhasil Mengirim Pesan Ke** `{done}` **chat,sorry tod Gagal Mengirim Pesan Ke** `{error}` **chat**"
+        f"**☑️Berhasil Mengirim Ke** `{done}` **chat,❌ Gagal Mengirim Pesan Ke** `{error}` **chat**"
     )
 
 
@@ -170,7 +170,7 @@ add_command_help(
     "broadcast",
     [
         [
-            "gcast <text/reply>",
+            "gikes <text/reply>",
             "Mengirim Global Broadcast pesan ke Seluruh Grup yang kamu masuk. (Bisa Mengirim Media/Sticker)",
         ],
         [
